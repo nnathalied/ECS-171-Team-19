@@ -34,5 +34,5 @@
 - Remove `Draft: ` from title of the pull request
 - Request a code review
 - Wait for review and merge
-- 
+
 (workflow credit: Henry Yu) 
