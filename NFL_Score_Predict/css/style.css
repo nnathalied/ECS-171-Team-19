@@ -1,0 +1,392 @@
+/*--------------------------------------------------------------*/
+/* GENERAL */
+/*--------------------------------------------------------------*/
+
+body {
+    margin: 0;
+    background-color: black;
+	min-width:1024px;
+}
+
+.logo { 
+    z-index: 1;
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	border: 1px solid white; 
+}
+
+.logo-text {
+	z-index: 1;
+	position: absolute;
+	top: 0px;
+	left: 90px;
+	font-size: 25px;
+	font-family: Abel, Arial;
+	color: white;
+}
+
+/*--------------------------------------------------------------*/
+/* BACKGROUND */
+/*--------------------------------------------------------------*/
+
+.img-comp-container {
+  position: relative;
+  height: 750px;
+  margin: 0;
+}
+
+.img-comp-img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  opacity: 1;
+}
+
+
+.img-comp-img img {
+  display: block;
+  vertical-align: middle;
+}
+
+.img-comp-slider {
+  position: absolute;
+  z-index: 5;
+  cursor: ew-resize;
+  /*set the appearance of the slider:*/
+  width: 20px;
+  height: 60px;
+  background-color: white;
+  opacity: 0.7;
+  border-radius: 5%;
+}
+
+/*--------------------------------------------------------------*/
+/* HOME TEXT */
+/*--------------------------------------------------------------*/
+
+.front {
+    z-index:2;
+	text-align: left;
+	color: white;
+}
+
+.img-comp-img {
+  width: 100%;
+}
+
+#cover-img {
+  margin-left: 30%;
+  margin-top: 260px;
+  height: 700px;
+  width: 70%;
+
+}
+
+#team {
+    position: absolute;
+	top: 20%;
+    left: 2%;
+	font: Arial;
+    font-weight: lighter;
+	font-size: 24px;	
+}
+
+#line1 {
+    position: absolute;
+	top: 8%;
+    left: 2%;
+	font-family: Abel, Arial;
+    font-weight: normal;
+	font-size: 150px;	
+}
+
+#line2 {
+    position: absolute;
+	top: 30%;
+    left: 2%;
+	font-family: Abel, Arial;	
+    font-weight: normal;
+	font-size: 120px;
+}
+
+#line3 {
+    z-index:3;
+    position: absolute;
+    font-weight: normal;
+    text-align: left;
+	top: 35%;
+	left: 2%;
+	font-size: 240px;
+	line-height: 0px;
+	color: #A50202;
+	font-family: "Allerta Stencil", Arial;
+}
+
+.predict-btn {
+  background-color: #A50202;
+  width: 150px;
+  height: 40px;
+  margin-left: 80px;
+  color: wheat;
+}
+
+/*--------------------------------------------------------------*/
+/* NAVIGATE BAR */
+/*--------------------------------------------------------------*/
+
+#mySidenav a {
+  z-index: 10;
+  position: fixed; /* Position them relative to the browser window */
+  top: -52px; /* Position them outside of the screen */
+  transition: 0.3s; /* Add transition on hover */
+  padding: 18px; 
+  width: 300px; 
+  text-decoration: none; 
+  font-size: 16px; 
+  color: white; 
+  font-family: Arial;
+  font-weight:normal;
+  border: 1px solid white; 
+  border-radius: 0 0px 0px 0; 
+  background-color: black;
+}
+
+#mySidenav a.active {
+  top: -52px;
+  background-color: #A50202;
+}
+
+#mySidenav a:hover {
+  top: -1px; 
+  background-color: #A50202;
+  opacity: 0.9;
+}
+
+#homepage {
+  right: 400px;
+}
+
+#predict {
+  right: 250px;
+}
+
+#about {
+  right: 100px;
+}
+
+/*--------------------------------------------------------------*/
+/* NEXT BUTTON */
+/*--------------------------------------------------------------*/
+
+.next a {
+  position:fixed;
+  top: 40%;
+  right: 5%;
+  opacity: 0.3; 
+  z-index: 5;
+}
+
+.next a:hover {
+  position: absolute;
+  opacity: 1; 
+}
+
+#nextimg {
+  width: 150px;
+  height: 150px;
+}
+
+/*--------------------------------------------------------------*/
+/* Photochange */
+/*--------------------------------------------------------------*/
+
+#photochange1 {
+  z-index:-1;
+  position: absolute; 
+  top: 60px;
+  left: 240px;
+  opacity: 0.9;
+}
+
+#photochange2 {
+  position: absolute; 
+  top: 250px;
+  left: 550px;
+  z-index:-1;
+} 
+
+#photochange3 {
+  position: absolute;
+  top: 250px;
+  left: 650px;
+}
+
+#photochange4 {
+  position: absolute;
+  z-index:-1;
+  top: 120px;
+  left: 500px;
+  opacity: 0.9;
+}
+
+/*--------------------------------------------------------------*/
+/* STORY TEXT */
+/*--------------------------------------------------------------*/
+
+.story-container {
+	position: relative;
+	z-index: 2;
+	left: 50px;
+	height: 600px;
+	text-align: justify;
+	width: 30%;
+	font-weight: normal;
+	padding: 10px 20px;
+}	
+
+
+.story-container .heading {
+  position: absolute; 
+  top: 10%;
+  height: 60px;
+  font-family: Abel, Arial;
+  font-size: 55px;
+  color: white;
+}
+
+.story-container .subheading {
+  position: absolute; 
+  top: 24%;
+  width: 200%;
+  height: 40px;
+  font-family: Abel, Arial;
+  font-size: 40px;
+  color: #A50202;
+}
+
+.story-container .content {
+  position: relative;
+  top: 160px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 18px;
+  width: 490px;
+}
+
+#content1-1 {
+	top: 200px;
+    width: 1100px; 
+	line-height: 30px;
+    font-family: Abel, Arial;
+	line-height: 50px;
+	font-size: 28px;
+    color: 	#F4A460;	
+}
+
+#content1-2 {
+	top: 0px;
+    width: 1100px;
+	line-height: normal;	
+}
+
+#content2 {
+  top: 220px;
+}
+
+
+#img1 {
+  position: absolute;
+  z-index: 9;
+  top: 120px;
+  left: 510px;
+}
+
+#img2-1 {
+  position: absolute; 
+  top: 100px;
+  left: 300px;
+  z-index: 1;
+}
+
+#img2-2 {
+  position: absolute;
+  top: 560px;
+  left: 640px;
+  padding-bottom: 20px;
+  z-index: 1;
+}
+
+/*--------------------------------------------------------------*/
+/* STORY NAVIGATOR*/
+/*--------------------------------------------------------------*/
+
+.myStorynav a {
+  position: fixed; 
+  z-index: 5;
+  bottom: 50px; 
+  transition: 0.3s; 
+  opacity:0.3;
+}
+
+.myStorynav a.active {
+  opacity: 1;
+}
+
+.myStorynav a:hover {
+  opacity: 1;
+}
+
+#bullet1 {
+  right: 570px;
+}
+#bullet2 {
+  right: 540px;
+}
+#bullet3 {
+  right: 510px;
+}
+#bullet4 {
+  right: 480px;
+}
+#bullet5 {
+  right: 450px;
+}
+#bullet6 {
+  right: 420px;
+}
+#bullet7 {
+  right: 390px;
+}
+#bullet8 {
+  right: 360px;
+}
+#bullet9 {
+  right: 330px;
+}
+#bullet10 {
+  right: 300px;
+}
+
+#bullet11 {
+  right: 270px;
+}
+
+#bullet12{
+  right: 240px;
+}
+
+#bullet13 {
+  right: 210px;
+}
+
+#bullet14 {
+  right: 180px;
+}
+
+#bullet15 {
+  right: 150px;
+}
+

@@ -1,0 +1,95 @@
+<!DCOTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
+	<meta name='description' content='about'>
+	
+	<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'type='text/css'>
+	<link rel="stylesheet" href="css/reset.css"> 
+	<link rel="stylesheet" href="css/style_about.css"> <!-- Resource style -->
+	<script src="js_about/modernizr.js"></script> 
+</head>
+
+<body>
+<nav class="cd-vertical-nav">
+	<ul>
+		<li><a href="#section1" class="active"><span class="label">Project</span></a></li>
+		<li><a href="#section2"><span class="label">Team</span></a></li>
+		<li><a href="#section3"><span class="label">Resources</span></a></li>
+	</ul>
+</nav><!-- .cd-vertical-nav -->
+
+<button class="cd-nav-trigger cd-image-replace">Open navigation<span aria-hidden="true"></span></button>
+
+    <div id='header'>
+		<p>NFL Match Predict</p>
+	</div>
+
+<section id="section1" class="cd-section">
+
+	<div id="mySidenav" class="sidenav">
+		<a href="home.html" id="homepage">
+			<p><small>Have an idea of the general content</small></P>
+			HOMEPAGE
+		</a>
+		<a href="predict.html" id="predict">
+			<p><small> Predict a match</small></P>
+			PREDICT
+		</a>
+		<a class="active" href="about.html" id="about">
+			<p><small> Introduce the relevant background</small></P>
+			ABOUT
+		</a>
+	</div>
+	
+	<div class="content-wrapper">
+	    <h1>ABOUT PROJECT</h1>
+		<p>Algorithm description: We want to develop a machine learning algorithm that can be used by
+			(American) football coaches and newscasters in real time to predict the outcome of a football play.
+			Using independent variables such as down, distance, score margin, team, and time remaining in the
+			game, we want to predict whether a play will result in a pass, kick, or run. We plan on developing
+			3-4 ML models that range from simple (Logistic Regression) to more complex (Neural Network),
+			and will report the results in performance metrics for each algorithm. Application of algorithm:
+			The goal of this algorithm is to provide real-time predictions for football coaches and newscasters
+			as to which type of play is most likely to be run. This can be especially useful for coaches because
+			teams try to predict what the opponent is going to do while they are playing defense, so that they
+			can effectively counter it. Coaches traditionally rely on their intuition to make this prediction,
+			but if they have an ML-based model telling them what their opponent is (most likely) about to
+			do, they can make the right decision more often, and properly align their defense to counter the
+			upcoming type of play. Broadcasters could also make use of a model like this because it would help
+			them more accurately tell their audience how a game is going to unfold while they are calling it.
+			Similar to coaches, using an ML model to make these predictions would allow for more accuracy
+			than using their intuition alone.</p>
+		<a href="#section2" class="cd-scroll-down cd-image-replace">scroll down</a>
+	</div>
+	
+	
+</section><!-- cd-section -->
+
+<section id="section2" class="cd-section">
+	<div class="content-wrapper">
+		<img src="img/team.jpg" height="600px" width="950px">
+	</div>
+</section><!-- cd-section -->
+
+<section id="section3" class="cd-section">
+	<div class="content-wrapper">
+		<h2>Resources</h2>
+		<h1></h1>
+		<h3>Datasets:</h3><p><a href="https://www.kaggle.com/datasets/maxhorowitz/
+			nflplaybyplay2009to2016"target="_blank" > https://www.kaggle.com/datasets/maxhorowitz/
+			nflplaybyplay2009to2016</a></p>
+		<h3>Goals:</h3><p>The goal of this project is to have a working ML algorithm and simple frontend by the end of the
+			quarter. We plan on developing 3-4 ML models that range from simple (Logistic Regression) to
+			more complex (Neural Network). We will report the performance metrics for each algorithm in
+			order to land on the one that has the best performance for our use case.
+			The goal for our frontend will be to</p>
+		</div>
+</section><!-- cd-section -->
+	
+<script src="js_about/jquery-2.1.4.js"></script>
+<script src="js_about/main.js"></script> <!-- Resource jQuery -->
+	
+</body>
+</html>
