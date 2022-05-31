@@ -27,7 +27,7 @@
 
 ## Description of project:
 
-The goal of this project is to build a machine learning solution to predict the outcome of a football play, based on 
+The goal of this project is to build a machine learning solution to predict the outcome of a football play, based on 8 categorical and continuous attributes related to game play. 
 
 ## Dataset Used: 
 ['NFL Play by Play 2009-2018 (v5)'](https://www.kaggle.com/datasets/maxhorowitz/nflplaybyplay2009to2016) from Kaggle 
