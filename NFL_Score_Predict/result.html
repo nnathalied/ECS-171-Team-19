@@ -1,0 +1,56 @@
+<html>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <meta name='description' content='Homepage'>
+    <meta name='author' content='Bravo'>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link rel='stylesheet' type='text/css' href='css/style.css'>
+    <script src="initComparisons.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Allerta Stencil' rel='stylesheet'>
+
+</head>
+
+<script>
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+    });
+    window.onload = function () {
+        let value = params.action;
+        document.getElementById('result').innerHTML = "The predict of action is: " + value;
+    }
+</script>
+
+<body id="story1">
+    <div class="logo-container">
+        <div class="logo-text">
+            <p>NFL Match Predict</p>
+        </div>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="home.html" id="homepage">
+            <p><small>Have an idea of the general content</small></P>
+            HOMEPAGE
+        </a>
+        <a class="active" href="predict.html" id="predict">
+            <p><small> Predict a match</small></P>
+            PREDICT
+        </a>
+        <a href="about.html" id="about">
+            <p><small> Introduce the relevant background</small></P>
+            ABOUT
+        </a>
+    </div>
+
+    <div class="story-container">
+        <div class="heading">
+            <p>Predict Result</p>
+        </div>
+        <div class="subheading">
+            <p id="result"></p>
+        </div>
+    </div>
+</body>

@@ -130,6 +130,7 @@ body {
   height: 40px;
   margin-left: 80px;
   color: wheat;
+  margin-top: 300px;
 }
 
 /*--------------------------------------------------------------*/
@@ -241,7 +242,7 @@ body {
 	left: 50px;
 	height: 600px;
 	text-align: justify;
-	width: 30%;
+	width: 100%;
 	font-weight: normal;
 	padding: 10px 20px;
 }	
@@ -250,7 +251,7 @@ body {
 .story-container .heading {
   position: absolute; 
   top: 10%;
-  height: 60px;
+  height: 100px;
   font-family: Abel, Arial;
   font-size: 55px;
   color: white;
@@ -273,7 +274,7 @@ body {
   font-family: sans-serif;
   font-weight: 100;
   font-size: 18px;
-  width: 490px;
+  width: 25%;
 }
 
 #content1-1 {
@@ -390,3 +391,7 @@ body {
   right: 150px;
 }
 
+
+select {
+  width: 180px;
+}

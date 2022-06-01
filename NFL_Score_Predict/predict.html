@@ -1,59 +1,166 @@
-
 <html>
 
-    <head>
-    
-      <meta charset='UTF-8'>
-      <meta name='description' content='Story1'>
-      <meta name='author' content='Bravo'>
-      <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
-      <link rel='stylesheet' type='text/css' href='../css/style.css'>
-      <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
-    </head>
-    
-    <body id = "story1">
-      
-        <div class = "logo-container">
-        <div class="logo-text">
-          <p>NFL Match Predict</p>
-        </div>
-        </div>
-                
-        <div id="mySidenav" class="sidenav">
-            <a href="home.html" id="homepage">
-                <p><small>Have an idea of the general content</small></P>
-                HOMEPAGE
-            </a>
-            <a class="active" href="predict.html" id="predict">
-                <p><small> Predict a match</small></P>
-                PREDICT
-            </a>
-            <a href="about.html" id="about">
-                <p><small> Introduce the relevant background</small></P>
-                ABOUT
-            </a>
-        </div>
-    
-        <div class="myStorynav" class="storynav">
-          <a class="active" href="1.html" id="bullet1">
-            <img src="../img/timeBullet1.png"></a>
-        </div>
-    
-        <div class="next">
-          <a href="about.html" >
-            <img src="../img/nextButton1.png">
-          </a>
-        </div>
-                
-        <div class="story-container">
-          <div class="heading"><p>Match Predict</p></div>
-          <div class="subheading"><p></p></div>	
-          <div class="content" id="content1-1">	  
-            <h3><i>Team One</i></h3><input/> 
-            <h3><i>Team Two</i></h3><input/> 
-          </div>
-        </div>
+<head>
 
-        <button class="predict-btn">Predict</button>
-    
-    </body>	
+  <meta charset='UTF-8'>
+  <meta name='description' content='Story1'>
+  <meta name='author' content='Bravo'>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <link rel='stylesheet' type='text/css' href='../css/style.css'>
+  <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+</head>
+
+<script>
+  window.onload = function () {
+    document.getElementById('predict-btn').onclick = function () {
+      var posteam = document.getElementById('postteamsel').value;
+      var quarter = document.getElementById('quartersel').value;
+      var yardline = document.getElementById('yardlineinput').value;
+      var qtrseconds = document.getElementById('qtrsecondsinput').value;
+      var down = document.getElementById('downselect').value;
+      var goalsel = document.getElementById('goalsel').value;
+      var yardstogo = document.getElementById('ydsinput').value;
+      var margin = document.getElementById('margininput').value;
+      // var typesel = document.getElementById('typesel').value;
+
+      if (!posteam || !quarter || !yardline || !qtrseconds || !down || !goalsel || !yardstogo || !margin) {
+        alert('Please fill the form and then submit!')
+      } else {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://127.0.0.1:5000/predict/' + posteam + '/' + quarter + '/' + yardline + '/' + qtrseconds + '/' + down + '/' + goalsel + '/' + yardstogo + '/' + margin);
+        xhr.send();
+        xhr.onreadystatechange = function () {
+
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            console.log(xhr.responseText);
+            var jsonResponse = JSON.parse(xhr.responseText);
+            window.location.href = '/result.html?action=' + jsonResponse.data
+          } else {
+            // alert(xhr.statusText);
+          }
+
+        };
+
+      }
+    }
+  }
+</script>
+
+<body id="story1">
+
+  <div class="logo-container">
+    <div class="logo-text">
+      <p>NFL Match Predict</p>
+    </div>
+  </div>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="home.html" id="homepage">
+      <p><small>Have an idea of the general content</small></P>
+      HOMEPAGE
+    </a>
+    <a class="active" href="predict.html" id="predict">
+      <p><small> Predict a match</small></P>
+      PREDICT
+    </a>
+    <a href="about.html" id="about">
+      <p><small> Introduce the relevant background</small></P>
+      ABOUT
+    </a>
+  </div>
+
+  <div class="myStorynav" class="storynav">
+    <a class="active" href="1.html" id="bullet1">
+      <img src="../img/timeBullet1.png"></a>
+  </div>
+
+  <div class="next">
+    <a href="about.html">
+      <img src="../img/nextButton1.png">
+    </a>
+  </div>
+
+  <div class="story-container">
+    <div class="heading">
+      <p>Match Predict</p>
+    </div>
+    <div class="subheading">
+      <p></p>
+    </div>
+    <div class="content" id="content1-1">
+      <p>Fill the input and click the button to run!</p>
+      <h3><i>Select Model to Run:</i></h3><select>
+        <option>SVM</option>
+      </select>
+      <h3><i>Posteam</i></h3>
+      <select id="postteamsel">
+        <option>posteam_ARI</option>
+        <option>posteam_ATL</option>
+        <option>posteam_BAL</option>
+        <option>posteam_BUF</option>
+        <option>posteam_CAR</option>
+        <option>posteam_CHI</option>
+        <option>posteam_CIN</option>
+        <option>posteam_CLE</option>
+        <option>posteam_DAL</option>
+        <option>posteam_DEN</option>
+        <option>posteam_DET</option>
+        <option>posteam_GB</option>
+        <option>posteam_HOU</option>
+        <option>posteam_IND</option>
+        <option>posteam_JAX</option>
+        <option>posteam_KC</option>
+        <option>posteam_LAC</option>
+        <option>posteam_LAR</option>
+        <option>posteam_LV</option>
+        <option>posteam_MIA</option>
+        <option>posteam_MIN</option>
+        <option>posteam_NE</option>
+        <option>posteam_NO</option>
+        <option>posteam_NYG</option>
+        <option>posteam_NYJ</option>
+        <option>posteam_PHI</option>
+        <option>posteam_PIT</option>
+        <option>posteam_SEA</option>
+        <option>posteam_SF</option>
+        <option>posteam_TB</option>
+        <option>posteam_TEN</option>
+        <option>posteam_WAS</option>
+        <option>posteam_ARI</option>
+      </select>
+      <h3><i>Quarter</i></h3>
+      <select id="quartersel">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+      <h3><i>Yardline:</i></h3><input id="yardlineinput" type="number" />
+      <h3><i>Quarter_seconds_remaining:</i></h3><input id="qtrsecondsinput" type="number" />
+      <h3><i>Down:</i></h3>
+      <select id="downselect">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+      <h3><i>Goal to go:</i></h3>
+      <select id="goalsel">
+        <option>0</option>
+        <option>1</option>
+      </select>
+      <h3><i>Yds to go:</i></h3><input id="ydsinput" type="number" />
+      <h3><i>Score margin:</i></h3><input id="margininput" type="number" />
+      <!-- <h3><i>Play type:</i></h3>
+      <select id="typesel">
+        <option>pass</option>
+        <option>run</option>
+        <option>kick</option>
+      </select> -->
+    </div>
+    <button class="predict-btn" id="predict-btn">Predict</button>
+  </div>
+
+
+
+</body>
