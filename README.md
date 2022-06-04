@@ -41,15 +41,16 @@ Frontend Dependencies:
 
 ## 🖥️ Run Interactive Frontend:
 
-#### 2. Frontend Environment Setup:
+#### 1. Frontend Environment Setup:
 ***Documentation in progress.***
 
 Two directories contain the website user interface. "NFLPrediectService"(this the backend service including a python api), and "NFL_Score_Predict" (this is the front-end ).
 
 1. You need an IDE and Python 3.9 to use the service (for example, Pycharm).
 2. Add Python configuration to your IDE.
+3. Ensure Flask is installed.
 
-#### 3. Run Frontend:
+#### 2. Run Frontend:
 
 1. Move dataset ```NFL_data_super_cleaned.csv``` to ```NFLPredictService``` directory.
 2. Run the notebook ```Generate_SVM_Model.ipynb``` (takes 2-8 minutes to run).
