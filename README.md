@@ -4,13 +4,13 @@
 
 The goal of this project is to build a machine learning solution to predict the outcome of a football play, based on 8 attributes related to game play.
 
-# Dataset Used
+# 📈 Dataset Used
 
 ['NFL Play by Play 2009-2018 (v5)'](https://www.kaggle.com/datasets/maxhorowitz/nflplaybyplay2009to2016) from Kaggle
 
-# How to Run Project Locally
+# 💻Run Project Locally
 
-## Data Preprocessing and ML Model Dependencies: 
+## Data Preprocessing and ML Model Dependencies:
 
 - Pandas
 - Numpy
@@ -59,6 +59,7 @@ The goal of this project is to build a machine learning solution to predict the 
 * Dataset (super) DOES need to be in directory for one hot encoding purposes.  -->
 
 # ✍️ Contributors
+
 * [nnathalied](https://github.com/nnathalied)
 * [SleepySeaOtter](SleepySeaOtter)
 * [ZubayrMohammad](https://github.com/ZubayrMohammad)
