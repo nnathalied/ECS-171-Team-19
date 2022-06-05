@@ -28,13 +28,14 @@ Frontend Dependencies:
 
 
 
-## 📊 Run Data Preprocessing Code: 
+## 📊 Run Data Preprocessing Code:
 
 1.  Ensure original dataset ['NFL Play by Play 2009-2018 (v5).csv'](https://www.kaggle.com/datasets/maxhorowitz/nflplaybyplay2009to2016) is downloaded and is located in  the ```Data_Preprocessing_Code``` directory.
 2. Run ```ECS171project_final_data_preprocessing.ipynb```
    - This will generate a new csv file, ```NFL_data_super_cleaned.csv``` in the ```Data_Preprocessing_Code``` directory.
 
-## 🧑‍💻 Run ML Model Code: 
+## 🧑‍💻 Run ML Model Code:
+
 1. Move ```NFL_data_super_cleaned.csv``` (generated during preprocessing) into the ```ML_Models``` directory.
 2. Pick a model to run!
 
@@ -42,7 +43,6 @@ Frontend Dependencies:
 ## 🖥️ Run Interactive Frontend:
 
 #### 1. Frontend Environment Setup:
-***Documentation in progress.***
 
 Two directories contain the website user interface. "NFLPrediectService"(this the backend service including a python api), and "NFL_Score_Predict" (this is the front-end ).
 
@@ -60,13 +60,6 @@ Two directories contain the website user interface. "NFLPrediectService"(this th
 
 3. Go to the directory ```NFL_Score_Predict``` and run ```predict.html```.
    This should start a server and give you the option to open the Frontend in a browser. From there, you can input your own football plays into the form on the "Predict" tab, and see what the model predicts the outcome of the play will be.
-
-
-<!-- Noelle:
-* upload 2 binary files (SVM model saved using pickle and Scaler saved using pickle)
-* update TrainModel.py code in github
-* NO svm code hould be in the NFLPredictService Directory
-* Dataset (super) DOES need to be in directory for one hot encoding purposes.  -->
 
 # ✍️ Contributors
 
