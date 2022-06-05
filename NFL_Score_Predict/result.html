@@ -10,7 +10,7 @@
     <script src="initComparisons.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Allerta Stencil' rel='stylesheet'>
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <script>
@@ -20,6 +20,14 @@
     window.onload = function () {
         let value = params.action;
         document.getElementById('result').innerHTML = "The predict of action is: " + value;
+
+        axios.post("http://127.0.0.1:5000/result").then(function(resp) {
+            console.log(resp);
+            document.getElementById('result_r').innerHTML = resp.data.data;
+        }).catch(function(error) {
+            console.log(error);
+        })
+
     }
 </script>
 
@@ -52,5 +60,15 @@
         <div class="subheading">
             <p id="result"></p>
         </div>
+        <div id="result_r" class="result_r" style="color: white !important;">
+        </div>
     </div>
+
+    <style>
+        .result_r {
+            color: white;
+            position: absolute;
+            top: 40%;
+        }
+    </style>
 </body>

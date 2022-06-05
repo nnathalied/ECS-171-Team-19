@@ -6,7 +6,8 @@
   <meta name='description' content='Story1'>
   <meta name='author' content='Bravo'>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-  <link rel='stylesheet' type='text/css' href='../css/style.css'>
+  <!--<link rel='stylesheet' type='text/css' href='../css/style.css'> -->
+  <link rel='stylesheet' type='text/css' href='/front_back_final/NFL_Score_Predict/css/style.css'>
   <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
 </head>
 
@@ -23,8 +24,12 @@
       var margin = document.getElementById('margininput').value;
       // var typesel = document.getElementById('typesel').value;
 
+
+
       if (!posteam || !quarter || !yardline || !qtrseconds || !down || !goalsel || !yardstogo || !margin) {
         alert('Please fill the form and then submit!')
+      } else if (yardstogo <0 || margin < 0 || yardline <0 || qtrseconds <0) {
+        alert("Please Enter Positive Value")
       } else {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', 'http://127.0.0.1:5000/predict/' + posteam + '/' + quarter + '/' + yardline + '/' + qtrseconds + '/' + down + '/' + goalsel + '/' + yardstogo + '/' + margin);
@@ -34,7 +39,7 @@
           if (xhr.readyState == 4 && xhr.status == 200) {
             console.log(xhr.responseText);
             var jsonResponse = JSON.parse(xhr.responseText);
-            window.location.href = '/result.html?action=' + jsonResponse.data
+            window.location.href = '/front_back_final/NFL_Score_Predict/result.html?action=' + jsonResponse.data
           } else {
             // alert(xhr.statusText);
           }
@@ -71,12 +76,12 @@
 
   <div class="myStorynav" class="storynav">
     <a class="active" href="1.html" id="bullet1">
-      <img src="../img/timeBullet1.png"></a>
+      <img src="/front_back_final/NFL_Score_Predict/img/timeBullet1.png"></a>
   </div>
 
   <div class="next">
     <a href="about.html">
-      <img src="../img/nextButton1.png">
+      <img src="/front_back_final/NFL_Score_Predict/img/nextButton1.png">
     </a>
   </div>
 

@@ -1,8 +1,8 @@
 # import sys
 # !{sys.executable} -m pip install cvxpy
 import os
+import pickle
 
-import cvxpy as cp
 import pandas as pd
 import numpy as np
 from numpy import array
@@ -17,50 +17,27 @@ from sklearn.svm import SVC
 def predict(team, quarter, yardline, qtrseconds, down, goalsel, yardtogo, margin):
     # import data set
 
-    # nfl1 = pd.read_csv("NFL_data_super_cleaned.csv")
+    nfl1 = pd.read_csv("NFL_data_super_cleaned.csv")
 
-    # nfl1.dropna(inplace=True)
+    nfl1.dropna(inplace=True)
     # print(nfl1.isnull().values.any(), nfl1.isnull().sum().sum())
 
     # # Our 350,000 samples seem like a little too much, so sample about 10,000 rows
-    # sample = nfl1.sample(n=150000, random_state=21, axis=0)
+    sample = nfl1.sample(n=150000, random_state=21, axis=0)
     # print(sample.isnull().values.any(), sample.isnull().sum().sum())
-    # # one-hot encode the categorical variables
-    # # posteam_type, defteam, side_of_field, game_date (drop), time (convert?), yrdline (convert?)
 
-    # cat_columns = ["posteam", "qtr"]
+    # one-hot encode the categorical variables
+    # posteam_type, defteam, side_of_field, game_date (drop), time (convert?), yrdline (convert?)
+
+    cat_columns = ["posteam", "qtr"]
     # # one-hot encode categorical variables
-    # encoder = preprocessing.OneHotEncoder()
-    # cat_array = encoder.fit_transform(sample[cat_columns]).toarray()
-    # cat_labels = encoder.get_feature_names_out(cat_columns)
-    # cat_onehot_encoded = pd.DataFrame(cat_array, columns=cat_labels)
+    encoder = preprocessing.OneHotEncoder()
+    cat_array = encoder.fit_transform(sample[cat_columns]).toarray()
+    cat_labels = encoder.get_feature_names_out(cat_columns)
+    cat_onehot_encoded = pd.DataFrame(cat_array, columns=cat_labels)
 
-    # # Add back the continuous variables
-    # cat_onehot_encoded["yardline_100"] = sample["yardline_100"]
-    # cat_onehot_encoded["quarter_seconds_remaining"] = sample["quarter_seconds_remaining"]
-    # cat_onehot_encoded["down"] = sample["down"]
-    # cat_onehot_encoded["goal_to_go"] = sample["goal_to_go"]
-    # cat_onehot_encoded["ydstogo"] = sample["ydstogo"]
-    # cat_onehot_encoded["score_margin"] = sample["score_margin"]
 
-    # cat_onehot_encoded["play_type"] = sample["play_type"]
-    # cat_onehot_encoded.dropna(inplace=True)
-
-    # print(cat_onehot_encoded.isnull().values.any(), cat_onehot_encoded.isnull().sum().sum())
-    # # print(onehot_encoded.isnull().values.any())
-    # # split data into training and testing sets
-    # # seed: 21, train/test ratio: 0.2 test, 0.8 train
-
-    # x, y = cat_onehot_encoded.drop(["play_type"], axis=1).to_numpy(), cat_onehot_encoded["play_type"].to_numpy()
-    # # Split data into training and testing sets
-    # X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=21)
-
-    # # compares each play_type to the other possible play_type
-
-    # scaler = preprocessing.StandardScaler()
-    # scaler.fit(X_train)
-
-    # find = np.where(cat_labels == team)
+    find = np.where(cat_labels == team)
     # clf_ovo = SVC(kernel='linear', decision_function_shape='ovo')  # The other is ovr
 
     # clf_ovo.fit(scaler.transform(X_train), np.asarray(y_train))
@@ -86,22 +63,16 @@ def predict(team, quarter, yardline, qtrseconds, down, goalsel, yardtogo, margin
     # load the model from disk
     loaded_model = pickle.load(open('finalized_svm_model.sav', 'rb'))
 
+    # load the scaler
+    scaler = pickle.load(open('scaler.pkl', 'rb'))
+
     # use the loaded model to predict the output
     result = loaded_model.predict(scaler.transform(inputX))
 
-    # code from LG version: 
-    # load the model from disk
-    # loaded_model = pickle.load(open(filename, 'rb'))
-    # result = loaded_model.score(X_test, Y_test)
-
-    # original line of code to predict:
-    # result = clf_ovo.predict(scaler.transform(inputX))
-
-    print(result)
-    a = classification_report(y_test, clf_ovo.predict(scaler.transform(X_test)))
-    print(type(a))
-    print(a)
+    a = "{{'label 1': { 'precision': 0.5}}}"
 
     np.set_printoptions(precision=2)
+    result=result.tolist()
+    print(type(result))
 
-    return result[0], a
+    return result, a
